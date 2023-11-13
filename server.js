@@ -179,10 +179,10 @@ app.get("/Getcombineddata", async (req, res) => {
     const { search, page = 1, perPage = 10, month } = req.query;
     try {
         const [transactions, statistics, piechart, barchart] = await Promise.all([
-            axios.get(`http://localhost:8001/Gettransactions?month=${month}&search=${search}`),
-            axios.get(`http://localhost:8001/Getstatistics?month=${month}`),
-            axios.get(`http://localhost:8001/Getpiechart?month=${month}`),
-            axios.get(`http://localhost:8001/Getbarchart?month=${month}`)
+            axios.get(`https://roxiler-backend-4ghg.onrender.com/Gettransactions?month=${month}&search=${search}`),
+            axios.get(`https://roxiler-backend-4ghg.onrender.com/Getstatistics?month=${month}`),
+            axios.get(`https://roxiler-backend-4ghg.onrender.com/Getpiechart?month=${month}`),
+            axios.get(`https://roxiler-backend-4ghg.onrender.com/Getbarchart?month=${month}`)
         ]);
         const transactionsData = transactions.data;
         const statisticsData = statistics.data;
